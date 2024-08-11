@@ -4,7 +4,7 @@ on:
   workflow_dispatch
 
 jobs:
-  synthesis:
+  verify:
     runs-on: ubuntu-latest
     steps:
       # 1 - Checkout repository

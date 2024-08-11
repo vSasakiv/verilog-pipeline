@@ -2,3 +2,4 @@
 
 time=$(date)
 echo "time=$time"
+ls /github/workspace

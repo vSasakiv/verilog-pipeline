@@ -7,9 +7,13 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      # 1 - Checkout repository
+      # 1 - Free some space
+      - name: Free Space
+        run: rm -rf /opt/hostedtoolcache
+      # 2 - Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
+      # 3 - Run verification container
       - name: Run Verification Container
         uses: ./.github/actions/verify
       - name: Test Print

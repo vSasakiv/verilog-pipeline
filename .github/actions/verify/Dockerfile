@@ -1,4 +1,4 @@
 FROM alpine:3.10
 
 RUN echo "Hello World"
-RUN ls /home
+RUN ls /github/workspace

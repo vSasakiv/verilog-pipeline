@@ -6,10 +6,11 @@ on:
 jobs:
   synthesis:
     runs-on: ubuntu-latest
-    container: raetro/quartus:20.1
     steps:
       # 1 - Checkout repository
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: Run Verification Container
+        uses: ./.github/actions/verify
       - name: Test Print
         run: echo "hello world"

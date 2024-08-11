@@ -1,4 +1,4 @@
-name: Verilog Verify
+name: Verilog Pipe
 
 on:
   workflow_dispatch

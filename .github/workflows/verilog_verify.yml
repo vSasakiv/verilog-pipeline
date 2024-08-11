@@ -1,0 +1,15 @@
+name: Verilog Verify
+
+on:
+  workflow_dispatch
+
+jobs:
+  synthesis:
+    runs-on: ubuntu-latest
+    container: raetro/quartus:20.1
+    steps:
+      # 1 - Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Test Print
+        run: echo "hello world"

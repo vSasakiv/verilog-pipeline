@@ -29,4 +29,4 @@ do
         echo "set_location_assignment $BOARD_PIN -to $MODULE_PIN" >> project.tcl
 done < "$PINFILE"
 
-echo "project close" >> project.tcl
+echo "project_close" >> project.tcl

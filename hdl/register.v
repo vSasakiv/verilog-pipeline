@@ -1,15 +1,19 @@
-// módulo registrador parametrizável quanto ao número de bits, com sinal de load síncrono e sem reset
-module register #(
-  parameter Size = 1 // parâmetro que indica o número de bits do registrador
-) (
-  input clk, // sinal de clock
-  input [Size - 1:0] data_i, // entrada do registrador
-  input load, // sinal de load síncrono
-  output reg [Size - 1:0] data_o // saída do registrador
+module test (
+  input [1:0] select, // seletor do multiplexador
+  input [31:0] I0, I1, I2, I3, // entradas
+  output [31:0] data_o // saída
 );
 
-  always @(posedge clk) begin
-    if (load) data_o <= data_i; //Para toda borda de clock, caso o load esteja ativado, carregamos a entrada no registrador.
+  reg [31:0] data_o_r; // reg para ser utilizado no bloco always
+
+  always @(*) begin
+    case (select)
+      2'd0: data_o_r = I0; // caso o seletor for 00, I0 deve passar para a saída
+      2'd1: data_o_r = I1; // caso o seletor for 01, I1 deve passar para a saída
+      2'd2: data_o_r = I2; // caso o seletor for 10, I2 deve passar para a saída
+      2'd3: data_o_r = I3; // caso o seletor for 11, I3 deve passar para a saída
+    endcase
   end
+  assign data_o = data_o_r;
 
 endmodule

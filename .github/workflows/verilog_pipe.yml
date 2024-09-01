@@ -16,5 +16,9 @@ jobs:
       # 3 - Run verification container
       - name: Run Verification Container
         uses: ./.github/actions/verify
-      - name: Test Print
-        run: echo "hello world"
+      # 4 - Extract QAR
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: workspace_artifacts
+          path: ${{ github.workspace }}/quartus_project/project.qar

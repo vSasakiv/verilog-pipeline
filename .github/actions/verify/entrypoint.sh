@@ -30,3 +30,10 @@ do
 done < "$PINFILE"
 
 echo "project_close" >> project.tcl
+
+mkdir quartus_project
+cd quartus_project
+
+quartus_sh -t ../project.tcl
+quartus_sh --flow compile project
+quartus_sh --archive project

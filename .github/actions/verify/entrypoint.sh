@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -r /build/*
+
 touch project.tcl
 echo "load_package flow" >> project.tcl
 echo "project_new project -overwrite" >> project.tcl

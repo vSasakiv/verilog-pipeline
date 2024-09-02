@@ -31,6 +31,8 @@ done < "$PINFILE"
 
 echo "project_close" >> project.tcl
 
+df
+
 echo "built tcl"
 cat project.tcl
 

@@ -31,6 +31,9 @@ done < "$PINFILE"
 
 echo "project_close" >> project.tcl
 
+echo "built tcl"
+cat project.tcl
+
 mkdir quartus_project
 cd quartus_project
 

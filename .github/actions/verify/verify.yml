@@ -1,0 +1,8 @@
+# action.yml
+name: 'Verify'
+description: 'Verifies project and exports .qar'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    -m=4g
